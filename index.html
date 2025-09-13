@@ -35,20 +35,21 @@
   </style>
   <script>
     const ua = navigator.userAgent.toLowerCase();
-    function redirect() {
-      if (/iphone|ipad|ipod/.test(ua)) {
-        window.location.href = "model.usdz";
-      } else if (/android/.test(ua)) {
-        window.location.href = "model.glb";
-      } else {
-        document.getElementById("message").innerText = "Your device does not support this AR model.";
-      }
-    }
-    window.onload = redirect;
+    window.onload = () => {
+      setTimeout(() => {
+        if (/iphone|ipad|ipod/.test(ua)) {
+          window.location.href = "model.usdz";
+        } else if (/android/.test(ua)) {
+          window.location.href = "model.glb";
+        } else {
+          document.getElementById("message").innerText = "Your device does not support this AR model.";
+        }
+      }, 3000);
+    };
   </script>
 </head>
 <body>
   <div class="logo">@ShortSlops</div>
-  <div id="message">Thanks for supporting! Your AR model will open shortly...</div>
+  <div id="message"> &hearts; Thanks for supporting! &hearts; <br> Your AR model will open shortly...</div>
 </body>
 </html>
