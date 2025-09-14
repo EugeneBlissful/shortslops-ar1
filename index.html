@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>AR Model</title>
-    <style>
+  <style>
     body {
       font-family: sans-serif;
       margin: 0;
@@ -12,6 +12,7 @@
       flex-direction: column;   
       justify-content: center;  
       align-items: center;      
+      transform: translateY(-10%); /* сдвиг чуть выше центра */
       background: #f9f9f9;
       color: #333;
       text-align: center;       
@@ -39,7 +40,7 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
     }
-  
+
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
@@ -55,12 +56,12 @@
         } else {
           document.getElementById("message").innerText = "Your device does not support this AR model.";
         }
-      }, 3000);
+      }, 3000); // 3 секунды задержки
     };
   </script>
 </head>
 <body>
   <div class="logo">@ShortSlops</div>
-  <div id="message"> &hearts; Thanks for supporting &hearts; <br> Your AR model will open shortly...</div>
+  <div id="message"> &hearts; Thanks for supporting &hearts; <br>Your AR model will open shortly...</div>
 </body>
 </html>
